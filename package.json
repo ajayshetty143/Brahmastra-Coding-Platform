@@ -1,0 +1,11 @@
+{
+  "name": "engineers-odyssey-java-runner",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node engineers-odyssey-server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

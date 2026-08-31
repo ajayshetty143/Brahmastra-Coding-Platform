@@ -13,8 +13,14 @@ console.log("NODE =", process.version);
 
 try {
     console.log("PATH =", process.env.PATH);
-    console.log("JAVAC =", execSync("which javac || command -v javac || echo NOT_FOUND").toString());
-    console.log("JAVA =", execSync("which java || command -v java || echo NOT_FOUND").toString());
+    console.log(
+        "JAVAC =",
+        execSync("which javac || command -v javac || echo NOT_FOUND").toString()
+    );
+    console.log(
+        "JAVA =",
+        execSync("which java || command -v java || echo NOT_FOUND").toString()
+    );
     console.log(execSync("java -version 2>&1").toString());
 } catch (err) {
     console.log(err.toString());
@@ -30,7 +36,9 @@ function send(res, status, data, type = "application/json") {
         "Access-Control-Allow-Headers": "Content-Type",
     });
 
-    res.end(type === "application/json" ? JSON.stringify(data) : data);
+    res.end(type === "application/json"
+        ? JSON.stringify(data)
+        : data);
 }
 
 function run(command, args, options, timeoutMs) {
@@ -71,7 +79,6 @@ function run(command, args, options, timeoutMs) {
         });
     });
 }
-
 http.createServer(async (req, res) => {
 
     if (req.method === "OPTIONS") {
@@ -132,25 +139,27 @@ http.createServer(async (req, res) => {
 
             try {
 
-                fs.writeFileSync(path.join(dir, "Main.java"), code);
+                fs.writeFileSync(
+                    path.join(dir, "Main.java"),
+                    code
+                );
 
                 const compile = await run(
-    "/usr/bin/javac",
-    ["Main.java"],
-    { cwd: dir },
-    6000
-);
+                    "/usr/bin/javac",
+                    ["Main.java"],
+                    {
+                        cwd: dir,
+                    },
+                    6000
+                );
 
-console.log("========== COMPILE ==========");
-console.log(compile);
-
-if (compile.code !== 0 || compile.timedOut) {
-    return send(res, 200, {
-        ok: false,
-        stage: "compile",
-        output: JSON.stringify(compile, null, 2)
-    });
-}
+                if (compile.code !== 0 || compile.timedOut) {
+                    return send(res, 200, {
+                        ok: false,
+                        stage: "compile",
+                        output: compile.output,
+                    });
+                }
 
                 const execute = await run(
                     "/usr/bin/java",
@@ -161,7 +170,6 @@ if (compile.code !== 0 || compile.timedOut) {
                     },
                     4000
                 );
-
                 return send(res, 200, {
                     ok: execute.code === 0,
                     stage: "run",
@@ -213,6 +221,58 @@ if (compile.code !== 0 || compile.timedOut) {
         send(res, 200, content, mime);
     });
 
+    fs.readFile(file, (err, content) => {
+
+        if (err) {
+            return send(res, 404, "Not found", "text/plain");
+        }
+
+        const ext = path.extname(file);
+
+        const mime =
+            ext === ".html"
+                ? "text/html"
+                : ext === ".js"
+                ? "text/javascript"
+                : ext === ".css"
+                ? "text/css"
+                : ext === ".pdf"
+                ? "application/pdf"
+                : "application/octet-stream";
+
+        send(res, 200, content, mime);
+    });
+
 }).listen(port, "0.0.0.0", () => {
-    console.log(`Engineer's Odyssey running at http://0.0.0.0:${port}`);
+    console.log(
+        `Engineer's Odyssey running at http://0.0.0.0:${port}`
+    );
+});
+
+    fs.readFile(file, (err, content) => {
+
+        if (err) {
+            return send(res, 404, "Not found", "text/plain");
+        }
+
+        const ext = path.extname(file);
+
+        const mime =
+            ext === ".html"
+                ? "text/html"
+                : ext === ".js"
+                ? "text/javascript"
+                : ext === ".css"
+                ? "text/css"
+                : ext === ".pdf"
+                ? "application/pdf"
+                : "application/octet-stream";
+
+        send(res, 200, content, mime);
+    });
+
+}).listen(port, "0.0.0.0", () => {
+    console.log(
+        `Engineer's Odyssey running at http://0.0.0.0:${port}`
+    );
 });

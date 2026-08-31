@@ -5,7 +5,7 @@ const path = require('path');
 const { spawn } = require('child_process');
 
 const root = __dirname;
-const port = process.env.PORT || 3000;
+const port = 4173;
 const blocked = /ProcessBuilder|Runtime\.getRuntime|\.exec\(|Files\.delete|System\.exit|Socket\s*\(|ServerSocket|URL\s*\(|Class\.forName/i;
 
 function send(res, status, data, type = 'application/json') {

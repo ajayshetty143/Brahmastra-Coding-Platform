@@ -60,4 +60,5 @@ http.createServer(async (req, res) => {
     const mime = ext === '.html' ? 'text/html' : ext === '.pdf' ? 'application/pdf' : ext === '.js' ? 'text/javascript' : 'application/octet-stream';
     send(res, 200, content, mime);
   });
-}).listen(port, '127.0.0.1', () => console.log(`Engineer's Odyssey running at http://127.0.0.1:${port}`));
+}).listen(port, '0.0.0.0', () => console.log(`Engineer's Odyssey running at http://0.0.0.0:${port}`));
+

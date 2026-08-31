@@ -123,13 +123,12 @@ http.createServer(async (req, res) => {
 
                 fs.writeFileSync(path.join(dir, 'Main.java'), code);
 
-                const compile = await run(
-                    'javac',
-                    ['Main.java'],
-                    { cwd: dir },
-                    6000
-                );
-
+               const compile = await run(
+    '/usr/bin/javac',
+    ['Main.java'],
+    { cwd: dir },
+    6000
+);
                 if (compile.code !== 0 || compile.timedOut)
                     return send(res, 200, {
                         ok: false,
@@ -138,15 +137,14 @@ http.createServer(async (req, res) => {
                     });
 
                 const execute = await run(
-                    'java',
-                    ['Main'],
-                    {
-                        cwd: dir,
-                        input
-                    },
-                    4000
-                );
-
+    '/usr/bin/java',
+    ['Main'],
+    {
+        cwd: dir,
+        input
+    },
+    4000
+);
                 return send(res, 200, {
                     ok: execute.code === 0,
                     stage: 'run',

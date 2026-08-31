@@ -135,21 +135,22 @@ http.createServer(async (req, res) => {
                 fs.writeFileSync(path.join(dir, "Main.java"), code);
 
                 const compile = await run(
-                    "/usr/bin/javac",
-                    ["Main.java"],
-                    {
-                        cwd: dir,
-                    },
-                    6000
-                );
+    "/usr/bin/javac",
+    ["Main.java"],
+    { cwd: dir },
+    6000
+);
 
-                if (compile.code !== 0 || compile.timedOut) {
-                    return send(res, 200, {
-                        ok: false,
-                        stage: "compile",
-                        output: compile.output,
-                    });
-                }
+console.log("========== COMPILE ==========");
+console.log(compile);
+
+if (compile.code !== 0 || compile.timedOut) {
+    return send(res, 200, {
+        ok: false,
+        stage: "compile",
+        output: JSON.stringify(compile, null, 2)
+    });
+}
 
                 const execute = await run(
                     "/usr/bin/java",

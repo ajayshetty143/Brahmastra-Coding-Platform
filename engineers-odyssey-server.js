@@ -6,6 +6,9 @@ const { spawn } = require('child_process');
 
 const root = __dirname;
 const port = process.env.PORT || 3000;
+console.log('=== SERVER STARTING ===');
+console.log('PORT=', process.env.PORT);
+console.log('NODE=', process.version);
 const blocked = /ProcessBuilder|Runtime\.getRuntime|\.exec\(|Files\.delete|System\.exit|Socket\s*\(|ServerSocket|URL\s*\(|Class\.forName/i;
 
 function send(res, status, data, type = 'application/json') {
@@ -61,4 +64,5 @@ http.createServer(async (req, res) => {
     send(res, 200, content, mime);
   });
 }).listen(port, '0.0.0.0', () => console.log(`Engineer's Odyssey running at http://0.0.0.0:${port}`));
+
 

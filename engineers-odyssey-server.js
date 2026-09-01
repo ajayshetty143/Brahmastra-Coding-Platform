@@ -728,14 +728,13 @@ async function apiRun(req, res) {
         log("Execution Requested");
 
         const result = await executeJava(
+    source,
+    input
+);
 
-            source,
+recordExecution(result);
 
-            input
-
-        );
-
-        json(res, 200, result);
+json(res, 200, result);
 
     }
 
@@ -766,6 +765,14 @@ const server = http.createServer(
     async (req, res) => {
 
         log(req.method, req.url);
+        const ip = req.socket.remoteAddress || "unknown";
+
+if (!allowRequest(ip)) {
+    return json(res, 429, {
+        ok: false,
+        error: "Too many requests. Try again later."
+    });
+}
 
         if (req.method === "OPTIONS") {
 
@@ -808,6 +815,12 @@ const server = http.createServer(
             return apiRun(req, res);
 
         }
+        if (
+  req.method === "GET" &&
+  req.url === "/metrics"
+) {
+  return metricsEndpoint(req, res);
+}
 
         serveStatic(req, res);
 

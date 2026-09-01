@@ -22,9 +22,237 @@
     .learner-box{max-width:460px;margin:auto}.assessment-head{border-bottom:1px solid var(--stroke);padding-bottom:20px;margin-bottom:20px}.assessment-head p{color:var(--muted);margin:0}.assessment-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:17px 0}.assessment-tabs button{padding:9px 12px;border-radius:8px;background:#fff1;color:#b9c5df;font-weight:800;font-size:12px}.assessment-tabs button.active{background:var(--violet);color:white}.question{padding:19px;background:#ffffff08;border:1px solid var(--stroke);border-radius:12px;margin:12px 0}.question h4{margin:0 0 13px;font-size:15px}.option{display:flex;gap:9px;align-items:flex-start;padding:8px 0;color:#c5cee1;font-size:13px}.option input{accent-color:var(--cyan);margin-top:4px}.challenge-copy{color:#b5c0d7;font-size:13px;margin:0 0 10px}.code-input{width:100%;height:180px;background:#070b19;color:#dce5ff;border:1px solid var(--stroke);border-radius:9px 9px 0 0;padding:12px;font:12px/1.6 DM Mono;resize:vertical}.idebar{display:flex;justify-content:space-between;align-items:center;background:#101831;border:1px solid var(--stroke);border-bottom:0;border-radius:9px 9px 0 0;padding:8px 11px;font:11px DM Mono;color:#aebadd}.code-input+.idebar{border-radius:0;border-top:0;border-bottom:1px solid var(--stroke)}.ide-actions{display:flex;gap:7px}.run-btn{padding:6px 10px;background:var(--green);color:#06170e;border-radius:6px;font-size:11px;font-weight:800}.testcase{margin-top:10px;padding:10px;border-radius:8px;background:#07101f;border:1px solid var(--stroke);font:11px/1.5 DM Mono;color:#aab8d1}.testcase b{color:var(--gold)}.output{white-space:pre-wrap;min-height:45px;margin-top:10px;padding:10px;border-radius:8px;background:#050811;border:1px solid #213054;color:#92f2bd;font:11px/1.55 DM Mono}.hint-toggle{background:transparent;color:var(--gold);font-size:11px;font-weight:800;margin-top:8px;padding:0}.hint{display:none;margin-top:8px;padding:9px 11px;border-radius:7px;background:#ffcd6716;border-left:2px solid var(--gold);font-size:12px;color:#e6d9b5}.hint.show{display:block}.submission{font-size:12px;color:var(--green);margin:10px 0}.failed{color:#ffb0b9}.answer-link{color:var(--cyan);font-weight:800}.locked-msg{color:var(--muted);padding:26px;text-align:center;border:1px dashed var(--stroke);border-radius:12px}.learner-name{color:var(--cyan);font:700 14px Manrope}
     .cert{background:linear-gradient(135deg,#f8f4e6,#efe2b9);color:#292014;border:7px double #b78938;border-radius:5px;padding:clamp(22px,4vw,48px);text-align:center;position:relative}.cert .cert-kicker{font:11px DM Mono;letter-spacing:2px;color:#8c6726}.cert h2{font:700 clamp(34px,6vw,60px)/1 Playfair Display;margin:17px 0;color:#3c2a12}.cert p{margin:8px auto;max-width:590px}.cert .recipient{font:700 clamp(28px,5vw,45px) Playfair Display;color:#65410f;border-bottom:1px solid #b78938;display:inline-block;padding:0 20px 6px;margin:13px 0}.cert-bottom{display:flex;align-items:end;justify-content:space-between;text-align:left;gap:18px;margin-top:32px}.cert-sign{font:italic 28px Playfair Display;color:#3d2c17;border-bottom:1px solid #775327;padding-bottom:3px}.cert small{display:block;color:#705f43;font-size:10px;text-transform:uppercase;letter-spacing:1px}.cert-qr{width:106px;height:106px;background:white;padding:5px;border:1px solid #b78938}.badge-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:12px;margin-top:20px}.badge{padding:17px;border:1px solid var(--stroke);border-radius:12px;background:#ffffff08;text-align:center}.badge span{font-size:30px;display:block}.badge b{display:block;font-size:12px;margin-top:7px}.badge button{margin-top:9px;background:transparent;color:var(--cyan);font-size:11px;font-weight:800}.verify-result{font-size:12px;margin-top:10px;color:var(--green)}
     @media(max-width:800px){.navlinks{display:none}.hero,.dashboard,.admin-grid{grid-template-columns:1fr}.hero{padding-top:55px}.terminal{margin:0 10px 30px}.world-grid{grid-template-columns:repeat(2,1fr)}.world{min-height:155px}.admin-stats{grid-template-columns:1fr}.section{padding:60px 0}.stats{gap:16px}.footer{display:block}.footer span{display:block;margin:6px 0}.floating-card{right:-5px}.section-head{display:block}}
+  #splash-screen{
+    position:fixed;
+    inset:0;
+    width:100vw;
+    height:100vh;
+    z-index:999999;
+    background:#000;
+    overflow:hidden;
+}
+
+
+#splash-screen h1{
+    margin:18px 0 4px;
+    font-size:28px;
+    letter-spacing:4px;
+    color:#fff;
+}
+
+#splash-screen p{
+    margin:0;
+    font-size:11px;
+    letter-spacing:3px;
+    color:#8b9bb4;
+}
+
+#splash-screen.hide{
+    opacity:0;
+    visibility:hidden;
+}
+
+@keyframes splashLogo{
+    0%{
+        opacity:0;
+        transform:scale(.7);
+    }
+    60%{
+        opacity:1;
+        transform:scale(1.08);
+    }
+    100%{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+/* Brahmastra Splash Screen */
+#splash-screen{
+    position:fixed;
+    inset:0;
+    z-index:999999;
+    background:#050814;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+}
+
+.splash-content{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+}
+
+ation:logoPulse 1.8s ease-in-out infinite;
+.splash-logo{
+    position:absolute;
+    inset:0;
+    width:100vw;
+    height:100vh;
+    object-fit:contain;
+background:#000;
+    display:block;
+    animation:splashZoom 2s ease-out;
+}
+
+.splash-title{
+    margin-top:18px;
+    font-size:30px;
+    font-weight:900;
+    letter-spacing:6px;
+    color:#fff;
+}
+
+.splash-subtitle{
+    margin-top:5px;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:4px;
+    color:#8b9bb4;
+}
+
+.loading-bar{
+    width:220px;
+    height:3px;
+    margin:28px auto 12px;
+    background:#182033;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.loading-progress{
+    width:0%;
+    height:100%;
+    background:linear-gradient(90deg,#8b5cf6,#22d3ee);
+    animation:loading 2s linear forwards;
+}
+
+.loading-text{
+    font-size:9px;
+    letter-spacing:2px;
+    color:#64748b;
+}
+
+#splash-screen.hide{
+    opacity:0;
+    visibility:hidden;
+    transition:opacity .6s ease, visibility .6s ease;
+}
+
+@keyframes splashEnter{
+    from{
+        opacity:0;
+        transform:scale(.9);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+@keyframes logoPulse{
+    0%,100%{
+        transform:scale(1);
+    }
+    50%{
+        transform:scale(1.06);
+    }
+}
+
+@keyframes loading{
+    from{
+        width:0%;
+    }
+    to{
+        width:100%;
+    }
+}
+@keyframes splashZoom{
+    from{
+        transform:scale(1.03);
+        opacity:0;
+    }
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+/* ===== FINAL BRAHMASTRA SPLASH OVERRIDE ===== */
+
+#splash-screen{
+    position:fixed !important;
+    inset:0 !important;
+    width:100vw !important;
+    height:100vh !important;
+    margin:0 !important;
+    padding:0 !important;
+    z-index:999999 !important;
+    background:#000 !important;
+    overflow:hidden !important;
+    display:block !important;
+    opacity:1 !important;
+    visibility:visible !important;
+}
+
+#splash-screen .splash-content{
+    position:absolute !important;
+    inset:0 !important;
+    width:100vw !important;
+    height:100vh !important;
+    margin:0 !important;
+    padding:0 !important;
+}
+
+#splash-screen img{
+    position:absolute !important;
+    top:50% !important;
+    left:50% !important;
+
+    width:80vw !important;
+    height:80vh !important;
+
+    max-width:none !important;
+    max-height:none !important;
+
+    margin:0 !important;
+    padding:0 !important;
+
+    display:block !important;
+
+    transform:translate(-50%, -50%) !important;
+
+    object-fit:contain !important;
+    object-position:center !important;
+}
+
+/* Hide extra text from old splash versions */
+#splash-screen h1,
+#splash-screen p,
+#splash-screen .splash-title,
+#splash-screen .splash-subtitle,
+#splash-screen .loading-bar,
+#splash-screen .loading-text{
+    display:none !important;
+}
+
+#splash-screen.hide{
+    opacity:0 !important;
+    visibility:hidden !important;
+    pointer-events:none !important;
+    transition:opacity .6s ease, visibility .6s ease !important;
+}
   </style>
 </head>
 <body>
+  <div id="splash-screen">
+    <div class="splash-content">
+        <img src="logo.png" alt="Brahmastra Logo" class="splash-logo">
+        
+    </div>
+</div>
+  
   <div class="stars"></div>
   <nav><div class="brand"><div class="crest">
     <img src="logo.png" alt="brahmastra logo">
@@ -96,5 +324,37 @@
     function renderQuests(){const quests=JSON.parse(localStorage.getItem('odysseyQuests')||'[]'),table=document.getElementById('questTable');table.innerHTML=quests.length?quests.map(q=>`<tr><td>${safe(q.title)}</td><td>${safe(q.world)}</td><td><span class="tag">${safe(q.difficulty)}</span></td></tr>`).join(''):'<tr><td colspan="3" style="color:var(--muted);text-align:center">No quests published yet.</td></tr>'}
     renderWorlds();renderQuests();['adminModal','learnerModal','assessmentModal','certificateModal'].forEach(id=>document.getElementById(id).addEventListener('click',e=>{if(e.target.id===id)document.getElementById(id).classList.remove('show')}));document.addEventListener('keydown',e=>{if(e.key==='Escape')document.querySelectorAll('.modal.show').forEach(m=>m.classList.remove('show'));if(e.key==='Enter'&&document.getElementById('learnerModal').classList.contains('show'))saveLearner()});
   </script>
+  <script>
+window.addEventListener('load', function(){
+    setTimeout(function(){
+        const splash = document.getElementById('splash-screen');
+        if(splash){
+            splash.classList.add('hide');
+            setTimeout(function(){
+                splash.remove();
+            }, 600);
+        }
+    }, 2000);
+});
+</script>
+<script>
+window.addEventListener("load", function(){
+
+    setTimeout(function(){
+
+        const splash = document.getElementById("splash-screen");
+
+        if(splash){
+            splash.classList.add("hide");
+
+            setTimeout(function(){
+                splash.remove();
+            }, 700);
+        }
+
+    }, 2000);
+
+});
+</script>
 </body>
 </html>

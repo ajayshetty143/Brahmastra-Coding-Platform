@@ -25,6 +25,54 @@
   </style>
 </head>
 <body>
+  <div id="brahmastra-splash">
+    <img src="logo.png" alt="Brahmastra Coding Platform">
+</div>
+
+<style>
+#brahmastra-splash {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+    z-index: 999999;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#brahmastra-splash img {
+    width: 80vw;
+    height: 80vh;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+}
+
+#brahmastra-splash.hide {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+</style>
+
+<script>
+window.addEventListener("load", function () {
+    setTimeout(function () {
+        const splash = document.getElementById("brahmastra-splash");
+
+        if (splash) {
+            splash.classList.add("hide");
+
+            setTimeout(function () {
+                splash.remove();
+            }, 700);
+        }
+    }, 2000);
+});
+</script>
   <div class="stars"></div>
   <nav><div class="brand"><div class="crest">
     <img src="logo.png" alt="brahmastra logo">

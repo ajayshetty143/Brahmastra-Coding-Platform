@@ -67,15 +67,90 @@
     }
 }
 /* Brahmastra Splash Screen */
-#splash-screen{
-    position:fixed;
-    inset:0;
-    z-index:999999;
-    background:#050814;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    overflow:hidden;
+/* ================================
+   BRAHMASTRA SPLASH SCREEN
+   CENTER LOGO
+   ================================ */
+
+#splash-screen {
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    background: #050505 !important;
+
+    z-index: 999999 !important;
+    overflow: hidden !important;
+}
+
+/* Splash logo */
+#splash-screen img,
+#splash-screen .splash-logo {
+    display: block !important;
+
+    width: min(45vw, 520px) !important;
+    height: auto !important;
+
+    max-width: 80vw !important;
+    max-height: 70vh !important;
+
+    object-fit: contain !important;
+
+    margin: 0 auto !important;
+
+    animation: brahmastraSplash 1.5s ease-out forwards !important;
+}
+
+/* Remove unwanted text spacing */
+#splash-screen h1,
+#splash-screen p,
+#splash-screen .splash-title,
+#splash-screen .splash-subtitle {
+    margin: 0 !important;
+}
+
+/* Splash animation */
+@keyframes brahmastraSplash {
+    0% {
+        opacity: 0;
+        transform: scale(.75);
+    }
+
+    60% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Hide splash */
+#splash-screen.hide {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+
+    transition:
+        opacity .6s ease,
+        visibility .6s ease !important;
+}
+
+/* Mobile */
+@media (max-width: 800px) {
+
+    #splash-screen img,
+    #splash-screen .splash-logo {
+        width: 70vw !important;
+        max-width: 380px !important;
+    }
 }
 
 .splash-content{
@@ -179,478 +254,705 @@ background:#000;
         opacity:1;
     }
 }
-/* ===== FINAL BRAHMASTRA SPLASH OVERRIDE ===== */
-
-#splash-screen{
-    position:fixed !important;
-    inset:0 !important;
-    width:100vw !important;
-    height:100vh !important;
-    margin:0 !important;
-    padding:0 !important;
-    z-index:999999 !important;
-    background:#000 !important;
-    overflow:hidden !important;
-    display:block !important;
-    opacity:1 !important;
-    visibility:visible !important;
-}
-
-#splash-screen .splash-content{
-    position:absolute !important;
-    inset:0 !important;
-    width:100vw !important;
-    height:100vh !important;
-    margin:0 !important;
-    padding:0 !important;
-}
-
-#splash-screen img{
-    position:absolute !important;
-    top:50% !important;
-    left:50% !important;
-
-    width:80vw !important;
-    height:80vh !important;
-
-    max-width:none !important;
-    max-height:none !important;
-
-    margin:0 !important;
-    padding:0 !important;
-
-    display:block !important;
-
-    transform:translate(-50%, -50%) !important;
-
-    object-fit:contain !important;
-    object-position:center !important;
-}
-
-/* Hide extra text from old splash versions */
-#splash-screen h1,
-#splash-screen p,
-#splash-screen .splash-title,
-#splash-screen .splash-subtitle,
-#splash-screen .loading-bar,
-#splash-screen .loading-text{
-    display:none !important;
-}
-
-#splash-screen.hide{
-    opacity:0 !important;
-    visibility:hidden !important;
-    pointer-events:none !important;
-    transition:opacity .6s ease, visibility .6s ease !important;
-}
 /* =========================================================
-   BRAHMASTRA — NEO-BRUTALISM × EDITORIAL
+   BRAHMASTRA — INDIAN FUTURISM
+   Modern Indian Identity × Future Technology
    ========================================================= */
 
 :root{
-    --ink:#111111 !important;
-    --muted:#4d4d4d !important;
-    --panel:#f7f1df !important;
-    --stroke:#111111 !important;
+    --bg:#08090b !important;
+    --panel:#111316 !important;
+    --ink:#fff7e6 !important;
+    --muted:#b8ad9b !important;
+    --stroke:rgba(255,190,92,.20) !important;
 
-    --violet:#ff3158 !important;
-    --cyan:#0b0b0b !important;
-    --gold:#ffd43b !important;
-    --green:#39d98a !important;
-
-    --bg:#f2ead7 !important;
+    --cyan:#4da6ff !important;
+    --violet:#ff6b1a !important;
+    --gold:#ffb52e !important;
+    --green:#31d391 !important;
 }
 
-/* ---------- GLOBAL ---------- */
-
-*{
-    box-sizing:border-box;
-}
+/* =========================================================
+   GLOBAL BACKGROUND
+   ========================================================= */
 
 body{
-    margin:0 !important;
-    background:#f2ead7 !important;
-    color:#111 !important;
-    font-family:Manrope,Arial,sans-serif !important;
+    background:
+        radial-gradient(
+            circle at 85% 5%,
+            rgba(255,107,26,.16),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 15% 80%,
+            rgba(255,181,46,.08),
+            transparent 28%
+        ),
+        #08090b !important;
+
+    color:#fff7e6 !important;
 }
 
-body:before,
+/* Futuristic grid */
+
+body:before{
+    background-image:
+        linear-gradient(
+            rgba(255,181,46,.035) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,181,46,.035) 1px,
+            transparent 1px
+        ) !important;
+
+    background-size:50px 50px !important;
+    opacity:.45 !important;
+}
+
 body:after{
-    display:none !important;
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,107,26,.20),
+            transparent 65%
+        ) !important;
+
+    opacity:.18 !important;
 }
 
-.stars{
-    display:none !important;
-}
-
-/* ---------- NAVIGATION ---------- */
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
 
 nav{
-    height:82px !important;
-    background:#f7f1df !important;
-    border-bottom:3px solid #111 !important;
-    box-shadow:0 5px 0 #111 !important;
-    backdrop-filter:none !important;
+    background:
+        rgba(8,9,11,.90) !important;
+
+    border-bottom:
+        1px solid rgba(255,181,46,.22) !important;
+
+    box-shadow:
+        0 10px 40px rgba(0,0,0,.35) !important;
+
+    backdrop-filter:
+        blur(18px) !important;
 }
 
 .brand{
-    color:#111 !important;
+    color:#fff7e6 !important;
     font-weight:900 !important;
-    letter-spacing:-1px !important;
 }
 
 .brand small{
-    color:#ff3158 !important;
+    color:#ff8a2a !important;
     font-weight:900 !important;
-}
-
-.crest{
-    width:58px !important;
-    height:58px !important;
-    border:3px solid #111 !important;
-    background:#ffd43b !important;
-    box-shadow:4px 4px 0 #111 !important;
-}
-
-.crest img{
-    width:52px !important;
-    height:52px !important;
-}
-
-.navlinks{
-    gap:18px !important;
 }
 
 .navlinks a{
-    color:#111 !important;
-    font-weight:900 !important;
+    color:#c8bead !important;
+    font-weight:700 !important;
 }
 
 .navlinks a:hover{
-    color:#ff3158 !important;
+    color:#ffb52e !important;
 }
 
-/* ---------- BUTTONS ---------- */
+/* =========================================================
+   BRAHMASTRA CREST
+   ========================================================= */
 
-.btn{
-    border:3px solid #111 !important;
-    border-radius:0 !important;
-    background:#ffd43b !important;
-    color:#111 !important;
-    box-shadow:5px 5px 0 #111 !important;
-    font-weight:900 !important;
-    transform:none !important;
+.crest{
+    background:
+        linear-gradient(
+            145deg,
+            #1a1510,
+            #090909
+        ) !important;
+
+    border:
+        1px solid rgba(255,181,46,.45) !important;
+
+    box-shadow:
+        0 0 25px rgba(255,130,25,.12),
+        inset 0 0 20px rgba(255,181,46,.05) !important;
 }
 
-.btn:hover{
-    transform:translate(3px,3px) !important;
-    box-shadow:2px 2px 0 #111 !important;
-    filter:none !important;
+.crest img{
+    object-fit:contain !important;
 }
 
-.btn.secondary{
-    background:#f7f1df !important;
-    border:3px solid #111 !important;
-    color:#111 !important;
-    box-shadow:5px 5px 0 #111 !important;
-}
-
-.btn.gold{
-    background:#ff3158 !important;
-    color:#fff !important;
-}
-
-/* ---------- HERO ---------- */
+/* =========================================================
+   HERO
+   ========================================================= */
 
 .hero{
-    min-height:650px !important;
-    padding:90px 0 80px !important;
-}
-
-.eyebrow{
-    color:#ff3158 !important;
-    font-weight:900 !important;
-    letter-spacing:3px !important;
+    background:
+        radial-gradient(
+            circle at 70% 30%,
+            rgba(255,107,26,.09),
+            transparent 35%
+        ) !important;
 }
 
 .hero h1{
-    color:#111 !important;
-    font-family:Playfair Display,Georgia,serif !important;
-    font-weight:900 !important;
-    letter-spacing:-4px !important;
-}
+    color:#fff7e6 !important;
 
-.gradient{
-    background:#ff3158 !important;
-    background-clip:text !important;
-    -webkit-background-clip:text !important;
-    color:transparent !important;
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif !important;
+
+    font-weight:900 !important;
+
+    letter-spacing:-3px !important;
 }
 
 .hero p{
-    color:#333 !important;
+    color:#c8bead !important;
 }
 
-/* ---------- TERMINAL ---------- */
+.eyebrow{
+    color:#ff9d32 !important;
+
+    font-weight:900 !important;
+
+    letter-spacing:3px !important;
+}
+
+/* =========================================================
+   HERO GRADIENT
+   ========================================================= */
+
+.gradient{
+    background:
+        linear-gradient(
+            110deg,
+            #ffb52e,
+            #ff6b1a,
+            #ff9d32
+        ) !important;
+
+    background-clip:text !important;
+    -webkit-background-clip:text !important;
+
+    color:transparent !important;
+}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.btn{
+    background:
+        linear-gradient(
+            135deg,
+            #ffb52e,
+            #ff6b1a
+        ) !important;
+
+    color:#140b03 !important;
+
+    border:
+        1px solid #ffb52e !important;
+
+    border-radius:
+        9px !important;
+
+    box-shadow:
+        0 8px 25px rgba(255,107,26,.18) !important;
+
+    font-weight:900 !important;
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease,
+        filter .2s ease !important;
+}
+
+.btn:hover{
+    transform:
+        translateY(-2px) !important;
+
+    filter:
+        brightness(1.08) !important;
+
+    box-shadow:
+        0 12px 35px rgba(255,107,26,.28) !important;
+}
+
+.btn.secondary{
+    background:
+        rgba(255,255,255,.02) !important;
+
+    color:#fff7e6 !important;
+
+    border:
+        1px solid rgba(255,181,46,.28) !important;
+
+    box-shadow:
+        none !important;
+}
+
+.btn.gold{
+    background:
+        linear-gradient(
+            135deg,
+            #ffd166,
+            #ff8a2a
+        ) !important;
+
+    color:#120a03 !important;
+}
+
+/* =========================================================
+   TERMINAL
+   ========================================================= */
 
 .terminal{
-    background:#111 !important;
-    border:4px solid #111 !important;
-    border-radius:0 !important;
-    box-shadow:10px 10px 0 #ff3158 !important;
-}
+    background:
+        linear-gradient(
+            145deg,
+            rgba(29,24,19,.97),
+            rgba(8,9,11,.98)
+        ) !important;
 
-.terminal:before{
-    color:#ffd43b !important;
+    border:
+        1px solid rgba(255,181,46,.28) !important;
+
+    border-radius:
+        17px !important;
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.50),
+        0 0 45px rgba(255,107,26,.07) !important;
 }
 
 .terminal-head{
-    border-bottom:2px solid #f7f1df !important;
+    border-bottom:
+        1px solid rgba(255,181,46,.15) !important;
+
+    color:#fff7e6 !important;
 }
 
 .code{
-    color:#f7f1df !important;
+    color:#d9d0c1 !important;
 }
 
 .kw{
-    color:#ffd43b !important;
+    color:#ffb52e !important;
 }
 
 .fn{
-    color:#39d98a !important;
+    color:#59d9c5 !important;
 }
 
 .str{
-    color:#ff6b35 !important;
+    color:#ff8a2a !important;
 }
 
 .console{
-    background:#f7f1df !important;
-    color:#111 !important;
-    border-radius:0 !important;
-    border:2px solid #111 !important;
+    background:#050506 !important;
+
+    color:#8ee6b3 !important;
+
+    border:
+        1px solid rgba(255,181,46,.12) !important;
 }
 
-/* ---------- SECTIONS ---------- */
-
-.section{
-    padding:95px 0 !important;
-}
+/* =========================================================
+   SECTION HEADINGS
+   ========================================================= */
 
 .section h2{
-    color:#111 !important;
-    font-family:Playfair Display,Georgia,serif !important;
+    color:#fff7e6 !important;
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif !important;
+
     font-weight:900 !important;
+
     letter-spacing:-2px !important;
 }
 
 .section-head p{
-    color:#444 !important;
+    color:#b8ad9b !important;
 }
 
-/* ---------- WORLD CARDS ---------- */
-
-.world-grid{
-    gap:20px !important;
-}
+/* =========================================================
+   WORLD CARDS
+   ========================================================= */
 
 .world{
-    min-height:200px !important;
-    background:#fffaf0 !important;
-    border:3px solid #111 !important;
-    border-radius:0 !important;
-    box-shadow:7px 7px 0 #111 !important;
-    transition:transform .15s ease,box-shadow .15s ease !important;
-}
+    background:
+        linear-gradient(
+            145deg,
+            rgba(25,22,18,.95),
+            rgba(12,13,15,.96)
+        ) !important;
 
-.world:nth-child(3n+1){
-    background:#ffd43b !important;
-}
+    border:
+        1px solid rgba(255,181,46,.17) !important;
 
-.world:nth-child(3n+2){
-    background:#fffaf0 !important;
-}
+    border-radius:
+        15px !important;
 
-.world:nth-child(3n){
-    background:#ff3158 !important;
-    color:#fff !important;
-}
+    box-shadow:
+        0 12px 35px rgba(0,0,0,.25) !important;
 
-.world:nth-child(3n) p,
-.world:nth-child(3n) .number{
-    color:#fff !important;
+    transition:
+        transform .2s ease,
+        border-color .2s ease,
+        box-shadow .2s ease !important;
 }
 
 .world:hover{
-    transform:translate(4px,4px) !important;
-    box-shadow:3px 3px 0 #111 !important;
-    border-color:#111 !important;
+    transform:
+        translateY(-5px) !important;
+
+    border-color:
+        rgba(255,181,46,.48) !important;
+
+    box-shadow:
+        0 18px 45px rgba(0,0,0,.35),
+        0 0 25px rgba(255,107,26,.06) !important;
 }
 
-/* ---------- DASHBOARD ---------- */
+.world .bar{
+    background:
+        rgba(255,255,255,.08) !important;
+}
+
+.world .bar i{
+    background:
+        linear-gradient(
+            90deg,
+            #ff6b1a,
+            #ffb52e
+        ) !important;
+}
+
+/* =========================================================
+   CARDS
+   ========================================================= */
 
 .card{
-    background:#fffaf0 !important;
-    border:3px solid #111 !important;
-    border-radius:0 !important;
-    box-shadow:7px 7px 0 #111 !important;
+    background:
+        rgba(17,19,22,.94) !important;
+
+    border:
+        1px solid rgba(255,181,46,.16) !important;
+
+    border-radius:
+        15px !important;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.24) !important;
 }
 
 .card-title{
-    color:#111 !important;
-    font-weight:900 !important;
+    color:#fff7e6 !important;
 }
+
+/* =========================================================
+   DASHBOARD
+   ========================================================= */
 
 .rank-badge{
-    border:3px solid #111 !important;
-    border-radius:0 !important;
-    background:#ffd43b !important;
+    background:
+        linear-gradient(
+            135deg,
+            #ff6b1a,
+            #ffb52e
+        ) !important;
+
+    color:#120a03 !important;
+
+    border:
+        1px solid #ffb52e !important;
+
+    box-shadow:
+        0 8px 25px rgba(255,107,26,.18) !important;
 }
 
-/* ---------- STORY ---------- */
+/* =========================================================
+   STORY / MISSION
+   ========================================================= */
 
 .story-box{
-    background:#111 !important;
-    border:4px solid #111 !important;
-    border-radius:0 !important;
-    box-shadow:10px 10px 0 #ff3158 !important;
-}
+    background:
+        linear-gradient(
+            145deg,
+            rgba(42,27,16,.90),
+            rgba(12,12,13,.96)
+        ) !important;
 
-.story-box blockquote{
-    color:#f7f1df !important;
+    border:
+        1px solid rgba(255,181,46,.25) !important;
+
+    border-radius:
+        17px !important;
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.40) !important;
 }
 
 .story-box p{
-    color:#ffd43b !important;
+    color:#ffb52e !important;
 }
 
-/* ---------- MODALS ---------- */
+/* =========================================================
+   MODALS
+   ========================================================= */
 
 .modal{
-    background:rgba(17,17,17,.75) !important;
+    background:
+        rgba(0,0,0,.78) !important;
+
+    backdrop-filter:
+        blur(8px) !important;
 }
 
 .modal-box{
-    background:#f7f1df !important;
-    color:#111 !important;
-    border:4px solid #111 !important;
-    border-radius:0 !important;
-    box-shadow:12px 12px 0 #ff3158 !important;
+    background:
+        linear-gradient(
+            145deg,
+            #17120e,
+            #0b0c0e
+        ) !important;
+
+    color:#fff7e6 !important;
+
+    border:
+        1px solid rgba(255,181,46,.28) !important;
+
+    border-radius:
+        17px !important;
+
+    box-shadow:
+        0 35px 100px rgba(0,0,0,.65) !important;
 }
 
-/* ---------- INPUTS ---------- */
+/* =========================================================
+   INPUTS
+   ========================================================= */
 
 .admin-login input,
 .field input,
 .field select,
 .code-input{
-    background:#fffaf0 !important;
-    color:#111 !important;
-    border:3px solid #111 !important;
-    border-radius:0 !important;
+    background:
+        #08090b !important;
+
+    color:
+        #fff7e6 !important;
+
+    border:
+        1px solid rgba(255,181,46,.20) !important;
+
+    border-radius:
+        9px !important;
 }
 
-.admin-login input:focus{
-    border-color:#ff3158 !important;
-    box-shadow:4px 4px 0 #ffd43b !important;
+.admin-login input:focus,
+.field input:focus,
+.field select:focus{
+    outline:none !important;
+
+    border-color:
+        #ffb52e !important;
+
+    box-shadow:
+        0 0 0 4px rgba(255,181,46,.08) !important;
 }
 
-/* ---------- QUESTIONS ---------- */
+/* =========================================================
+   QUESTIONS / MCQ
+   ========================================================= */
 
 .question{
-    background:#fffaf0 !important;
-    border:3px solid #111 !important;
-    border-radius:0 !important;
-    box-shadow:5px 5px 0 #111 !important;
+    background:
+        rgba(20,20,20,.92) !important;
+
+    border:
+        1px solid rgba(255,181,46,.16) !important;
+
+    border-radius:
+        13px !important;
 }
 
 .assessment-tabs button{
-    border:2px solid #111 !important;
-    border-radius:0 !important;
-    background:#fffaf0 !important;
-    color:#111 !important;
+    background:
+        transparent !important;
+
+    color:
+        #b8ad9b !important;
+
+    border:
+        1px solid rgba(255,181,46,.16) !important;
+
+    border-radius:
+        8px !important;
 }
 
 .assessment-tabs button.active{
-    background:#ff3158 !important;
-    color:#fff !important;
+    background:
+        linear-gradient(
+            135deg,
+            #ff6b1a,
+            #ffb52e
+        ) !important;
+
+    color:
+        #120a03 !important;
+
+    border-color:
+        #ffb52e !important;
 }
 
-/* ---------- CODE EDITOR ---------- */
+/* =========================================================
+   CODE EDITOR
+   ========================================================= */
 
 .code-input{
-    background:#111 !important;
-    color:#f7f1df !important;
-    border-color:#111 !important;
+    background:
+        #050607 !important;
+
+    color:
+        #eee6d8 !important;
+
+    border:
+        1px solid rgba(255,181,46,.20) !important;
+
+    border-radius:
+        11px !important;
 }
 
 .idebar{
-    background:#ffd43b !important;
-    color:#111 !important;
-    border:3px solid #111 !important;
-    border-bottom:0 !important;
+    background:
+        rgba(255,181,46,.08) !important;
+
+    color:
+        #ffb52e !important;
+
+    border:
+        1px solid rgba(255,181,46,.20) !important;
 }
 
 .run-btn{
-    background:#39d98a !important;
-    border:2px solid #111 !important;
-    border-radius:0 !important;
-    color:#111 !important;
+    background:
+        #31d391 !important;
+
+    color:
+        #06120c !important;
+
+    border:
+        1px solid #31d391 !important;
+
+    border-radius:
+        8px !important;
 }
 
-/* ---------- BADGES ---------- */
+/* =========================================================
+   BADGES
+   ========================================================= */
 
 .badge{
-    background:#ffd43b !important;
-    color:#111 !important;
-    border:3px solid #111 !important;
-    border-radius:0 !important;
-    box-shadow:5px 5px 0 #111 !important;
+    background:
+        rgba(255,181,46,.09) !important;
+
+    color:
+        #ffb52e !important;
+
+    border:
+        1px solid rgba(255,181,46,.28) !important;
+
+    border-radius:
+        10px !important;
 }
 
-/* ---------- CERTIFICATE ---------- */
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+.answer-link,
+.challenge button,
+.badge button{
+    color:
+        #ffb52e !important;
+}
+
+.answer-link:hover,
+.challenge button:hover,
+.badge button:hover{
+    color:
+        #ff8a2a !important;
+}
+
+/* =========================================================
+   CERTIFICATE
+   ========================================================= */
 
 .cert{
-    border:6px double #111 !important;
-    border-radius:0 !important;
-    box-shadow:8px 8px 0 #111 !important;
+    background:
+        #fffaf0 !important;
+
+    color:
+        #111 !important;
+
+    border:
+        3px solid #d08a24 !important;
+
+    border-radius:
+        5px !important;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.40) !important;
 }
 
-/* ---------- FOOTER ---------- */
+/* =========================================================
+   FOOTER
+   ========================================================= */
 
 .footer{
-    background:#111 !important;
-    color:#f7f1df !important;
-    border-top:4px solid #111 !important;
+    background:
+        #050607 !important;
+
+    color:
+        #a99d8b !important;
+
+    border-top:
+        1px solid rgba(255,181,46,.20) !important;
 }
 
 .footer span{
-    color:#f7f1df !important;
+    color:
+        #a99d8b !important;
 }
 
-/* ---------- MOBILE ---------- */
+/* =========================================================
+   MOBILE
+   ========================================================= */
 
 @media(max-width:800px){
 
-    nav{
-        height:auto !important;
-        min-height:76px !important;
-    }
-
-    .hero{
-        padding-top:60px !important;
+    .hero h1{
+        letter-spacing:
+            -2px !important;
     }
 
     .terminal{
-        box-shadow:7px 7px 0 #ff3158 !important;
+        border-radius:
+            13px !important;
     }
 
-    .world{
-        box-shadow:5px 5px 0 #111 !important;
-    }
-
+    .world,
     .card{
-        box-shadow:5px 5px 0 #111 !important;
+        border-radius:
+            12px !important;
     }
 }
   </style>

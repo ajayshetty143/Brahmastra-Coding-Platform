@@ -243,6 +243,416 @@ background:#000;
     pointer-events:none !important;
     transition:opacity .6s ease, visibility .6s ease !important;
 }
+/* =========================================================
+   BRAHMASTRA — NEO-BRUTALISM × EDITORIAL
+   ========================================================= */
+
+:root{
+    --ink:#111111 !important;
+    --muted:#4d4d4d !important;
+    --panel:#f7f1df !important;
+    --stroke:#111111 !important;
+
+    --violet:#ff3158 !important;
+    --cyan:#0b0b0b !important;
+    --gold:#ffd43b !important;
+    --green:#39d98a !important;
+
+    --bg:#f2ead7 !important;
+}
+
+/* ---------- GLOBAL ---------- */
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0 !important;
+    background:#f2ead7 !important;
+    color:#111 !important;
+    font-family:Manrope,Arial,sans-serif !important;
+}
+
+body:before,
+body:after{
+    display:none !important;
+}
+
+.stars{
+    display:none !important;
+}
+
+/* ---------- NAVIGATION ---------- */
+
+nav{
+    height:82px !important;
+    background:#f7f1df !important;
+    border-bottom:3px solid #111 !important;
+    box-shadow:0 5px 0 #111 !important;
+    backdrop-filter:none !important;
+}
+
+.brand{
+    color:#111 !important;
+    font-weight:900 !important;
+    letter-spacing:-1px !important;
+}
+
+.brand small{
+    color:#ff3158 !important;
+    font-weight:900 !important;
+}
+
+.crest{
+    width:58px !important;
+    height:58px !important;
+    border:3px solid #111 !important;
+    background:#ffd43b !important;
+    box-shadow:4px 4px 0 #111 !important;
+}
+
+.crest img{
+    width:52px !important;
+    height:52px !important;
+}
+
+.navlinks{
+    gap:18px !important;
+}
+
+.navlinks a{
+    color:#111 !important;
+    font-weight:900 !important;
+}
+
+.navlinks a:hover{
+    color:#ff3158 !important;
+}
+
+/* ---------- BUTTONS ---------- */
+
+.btn{
+    border:3px solid #111 !important;
+    border-radius:0 !important;
+    background:#ffd43b !important;
+    color:#111 !important;
+    box-shadow:5px 5px 0 #111 !important;
+    font-weight:900 !important;
+    transform:none !important;
+}
+
+.btn:hover{
+    transform:translate(3px,3px) !important;
+    box-shadow:2px 2px 0 #111 !important;
+    filter:none !important;
+}
+
+.btn.secondary{
+    background:#f7f1df !important;
+    border:3px solid #111 !important;
+    color:#111 !important;
+    box-shadow:5px 5px 0 #111 !important;
+}
+
+.btn.gold{
+    background:#ff3158 !important;
+    color:#fff !important;
+}
+
+/* ---------- HERO ---------- */
+
+.hero{
+    min-height:650px !important;
+    padding:90px 0 80px !important;
+}
+
+.eyebrow{
+    color:#ff3158 !important;
+    font-weight:900 !important;
+    letter-spacing:3px !important;
+}
+
+.hero h1{
+    color:#111 !important;
+    font-family:Playfair Display,Georgia,serif !important;
+    font-weight:900 !important;
+    letter-spacing:-4px !important;
+}
+
+.gradient{
+    background:#ff3158 !important;
+    background-clip:text !important;
+    -webkit-background-clip:text !important;
+    color:transparent !important;
+}
+
+.hero p{
+    color:#333 !important;
+}
+
+/* ---------- TERMINAL ---------- */
+
+.terminal{
+    background:#111 !important;
+    border:4px solid #111 !important;
+    border-radius:0 !important;
+    box-shadow:10px 10px 0 #ff3158 !important;
+}
+
+.terminal:before{
+    color:#ffd43b !important;
+}
+
+.terminal-head{
+    border-bottom:2px solid #f7f1df !important;
+}
+
+.code{
+    color:#f7f1df !important;
+}
+
+.kw{
+    color:#ffd43b !important;
+}
+
+.fn{
+    color:#39d98a !important;
+}
+
+.str{
+    color:#ff6b35 !important;
+}
+
+.console{
+    background:#f7f1df !important;
+    color:#111 !important;
+    border-radius:0 !important;
+    border:2px solid #111 !important;
+}
+
+/* ---------- SECTIONS ---------- */
+
+.section{
+    padding:95px 0 !important;
+}
+
+.section h2{
+    color:#111 !important;
+    font-family:Playfair Display,Georgia,serif !important;
+    font-weight:900 !important;
+    letter-spacing:-2px !important;
+}
+
+.section-head p{
+    color:#444 !important;
+}
+
+/* ---------- WORLD CARDS ---------- */
+
+.world-grid{
+    gap:20px !important;
+}
+
+.world{
+    min-height:200px !important;
+    background:#fffaf0 !important;
+    border:3px solid #111 !important;
+    border-radius:0 !important;
+    box-shadow:7px 7px 0 #111 !important;
+    transition:transform .15s ease,box-shadow .15s ease !important;
+}
+
+.world:nth-child(3n+1){
+    background:#ffd43b !important;
+}
+
+.world:nth-child(3n+2){
+    background:#fffaf0 !important;
+}
+
+.world:nth-child(3n){
+    background:#ff3158 !important;
+    color:#fff !important;
+}
+
+.world:nth-child(3n) p,
+.world:nth-child(3n) .number{
+    color:#fff !important;
+}
+
+.world:hover{
+    transform:translate(4px,4px) !important;
+    box-shadow:3px 3px 0 #111 !important;
+    border-color:#111 !important;
+}
+
+/* ---------- DASHBOARD ---------- */
+
+.card{
+    background:#fffaf0 !important;
+    border:3px solid #111 !important;
+    border-radius:0 !important;
+    box-shadow:7px 7px 0 #111 !important;
+}
+
+.card-title{
+    color:#111 !important;
+    font-weight:900 !important;
+}
+
+.rank-badge{
+    border:3px solid #111 !important;
+    border-radius:0 !important;
+    background:#ffd43b !important;
+}
+
+/* ---------- STORY ---------- */
+
+.story-box{
+    background:#111 !important;
+    border:4px solid #111 !important;
+    border-radius:0 !important;
+    box-shadow:10px 10px 0 #ff3158 !important;
+}
+
+.story-box blockquote{
+    color:#f7f1df !important;
+}
+
+.story-box p{
+    color:#ffd43b !important;
+}
+
+/* ---------- MODALS ---------- */
+
+.modal{
+    background:rgba(17,17,17,.75) !important;
+}
+
+.modal-box{
+    background:#f7f1df !important;
+    color:#111 !important;
+    border:4px solid #111 !important;
+    border-radius:0 !important;
+    box-shadow:12px 12px 0 #ff3158 !important;
+}
+
+/* ---------- INPUTS ---------- */
+
+.admin-login input,
+.field input,
+.field select,
+.code-input{
+    background:#fffaf0 !important;
+    color:#111 !important;
+    border:3px solid #111 !important;
+    border-radius:0 !important;
+}
+
+.admin-login input:focus{
+    border-color:#ff3158 !important;
+    box-shadow:4px 4px 0 #ffd43b !important;
+}
+
+/* ---------- QUESTIONS ---------- */
+
+.question{
+    background:#fffaf0 !important;
+    border:3px solid #111 !important;
+    border-radius:0 !important;
+    box-shadow:5px 5px 0 #111 !important;
+}
+
+.assessment-tabs button{
+    border:2px solid #111 !important;
+    border-radius:0 !important;
+    background:#fffaf0 !important;
+    color:#111 !important;
+}
+
+.assessment-tabs button.active{
+    background:#ff3158 !important;
+    color:#fff !important;
+}
+
+/* ---------- CODE EDITOR ---------- */
+
+.code-input{
+    background:#111 !important;
+    color:#f7f1df !important;
+    border-color:#111 !important;
+}
+
+.idebar{
+    background:#ffd43b !important;
+    color:#111 !important;
+    border:3px solid #111 !important;
+    border-bottom:0 !important;
+}
+
+.run-btn{
+    background:#39d98a !important;
+    border:2px solid #111 !important;
+    border-radius:0 !important;
+    color:#111 !important;
+}
+
+/* ---------- BADGES ---------- */
+
+.badge{
+    background:#ffd43b !important;
+    color:#111 !important;
+    border:3px solid #111 !important;
+    border-radius:0 !important;
+    box-shadow:5px 5px 0 #111 !important;
+}
+
+/* ---------- CERTIFICATE ---------- */
+
+.cert{
+    border:6px double #111 !important;
+    border-radius:0 !important;
+    box-shadow:8px 8px 0 #111 !important;
+}
+
+/* ---------- FOOTER ---------- */
+
+.footer{
+    background:#111 !important;
+    color:#f7f1df !important;
+    border-top:4px solid #111 !important;
+}
+
+.footer span{
+    color:#f7f1df !important;
+}
+
+/* ---------- MOBILE ---------- */
+
+@media(max-width:800px){
+
+    nav{
+        height:auto !important;
+        min-height:76px !important;
+    }
+
+    .hero{
+        padding-top:60px !important;
+    }
+
+    .terminal{
+        box-shadow:7px 7px 0 #ff3158 !important;
+    }
+
+    .world{
+        box-shadow:5px 5px 0 #111 !important;
+    }
+
+    .card{
+        box-shadow:5px 5px 0 #111 !important;
+    }
+}
   </style>
 </head>
 <body>
@@ -256,14 +666,14 @@ background:#000;
   <div class="stars"></div>
   <nav><div class="brand"><div class="crest">
     <img src="logo.png" alt="brahmastra logo">
-</div><div>BRAHMASTRA CODING PLATFORM<small>POWERED BY AJAY</small></div></div><div class="navlinks"><a href="#journey">Journey</a><a href="#dashboard">Command center</a><a href="#story">The mission</a><a onclick="openAdmin()">Admin</a><button class="btn" onclick="beginJourney()">Begin journey</button></div></nav>
+</div><div>BRAHMASTRA CODING PLATFORM<small>POWERED BY BRAHMASTRA</small></div></div><div class="navlinks"><a href="#journey">Journey</a><a href="#dashboard">Command center</a><a href="#story">The mission</a><a onclick="openAdmin()">Admin</a><button class="btn" onclick="beginJourney()">Begin journey</button></div></nav>
   <main>
     <section class="hero"><div><div class="eyebrow">Year 2026 · Rebuild the network</div><h1>Master code. Become a <span class="gradient">developer.</span></h1><p>Learn Java, master DSA, solve real coding problems, and prepare yourself for the tech industry.</p><div class="actions"><button class="btn gold" onclick="beginJourney()">⚔ Start Coding</button><button class="btn secondary" onclick="document.querySelector('#story').scrollIntoView()">Explore Platform</button></div></div><div class="terminal"><div class="terminal-head"><span>Brahmastra Java Runtime</span><span class="dots">● ● ●</span></div><div class="code"><span class="kw">public class</span> <span class="fn">Engineer</span> {<br>&nbsp;&nbsp;<span class="kw">public static void</span> <span class="fn">main</span>(String[] args) {<br>&nbsp;&nbsp;&nbsp;&nbsp;String mission = <span class="str">"CODE"</span>;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="fn">solve</span>(mission);<br>&nbsp;&nbsp;}</div><div class="console">Sign in with your name to unlock Java Foundations.</div></div></section>
     <section class="section" id="journey"><div class="section-head"><div><div class="eyebrow">The complete journey</div><h2>Choose your next world.</h2></div><p>Each realm maps to a real career milestone. Clear the quests, collect the skills, and advance toward placement.</p></div><div class="world-grid" id="worldGrid"></div></section>
     <section class="section" id="dashboard"><div class="section-head"><div><div class="eyebrow">Pilot dashboard</div><h2>Your command center.</h2></div></div><div class="dashboard"><div class="card"><div class="card-title">Your journey</div><div class="rank"><div class="rank-badge">♜</div><div><h3>Ready to begin</h3><p>Your progress will appear here as you complete missions.</p></div></div><div class="challenge"><div class="mini">🧩</div><div><h4>Choose your first world</h4><p>Java Foundations is the starting point in Brahmastra..</p></div><button onclick="document.querySelector('#journey').scrollIntoView()">EXPLORE →</button></div></div><div class="card readiness"><div class="card-title">Placement readiness index</div><div class="ring"><div><b>—</b><small>NO DATA</small></div></div><p style="color:var(--muted);font-size:12px">Your readiness index is calculated after you complete missions.</p></div></div></section>
     <section class="section" id="achievements"><div class="section-head"><div><div class="eyebrow">Achievements</div><h2>Badges &amp; certificates.</h2></div><p>Every completed world awards a badge and a Brahmastra-signed certificate with its own QR verification code.</p></div><div class="badge-grid" id="badgeGrid"><div class="locked-msg">Complete a world to earn your first badge and certificate.</div></div></section>
     <section class="story" id="story"><div class="eyebrow">Incoming transmission</div><div class="story-box"><blockquote>“Critical systems are failing. Artificial intelligence has lost control. Only exceptional problem-solvers can restore the network.”</blockquote><p>YOUR JOURNEY BEGINS NOW · Brahmastra Coding Platform</p><button class="btn gold" onclick="document.querySelector('#journey').scrollIntoView()">Start Coding</button></div></section>
-    <footer class="footer"><span>BRAHMASTRA CODING PLATFORM · Powered by Ajay</span><span>Built for Java & DSA learners · Created by Ajay</span></footer>
+    <footer class="footer"><span>BRAHMASTRA CODING PLATFORM · Powered by Brahmastra</span><span>Built for Java & DSA learners · Created by Brahmastra</span></footer>
   </main>
   <div class="modal" id="learnerModal"><div class="modal-box learner-box"><button class="close" onclick="closeLearner()">×</button><div class="eyebrow">Learner sign-in</div><h2>Start your Brahmastra Journey</h2><p style="color:var(--muted)">Enter your name to start learning Java and DSA on Brahmastra Coding Platform. The remaining worlds unlock only after you complete the previous world.</p><label>Name</label><input id="learnerName" autocomplete="name" placeholder="Enter your name" /><button class="btn gold" style="width:100%;margin-top:16px" onclick="saveLearner()">Start Learning</button><div class="error" id="learnerError"></div></div></div>
   <div class="modal" id="assessmentModal"><div class="modal-box"><button class="close" onclick="closeAssessment()">×</button><div id="assessmentContent"></div></div></div>
@@ -298,11 +708,11 @@ background:#000;
     const getProgress=()=>JSON.parse(localStorage.getItem('odysseyProgress')||'{}');
     const saveProgress=p=>localStorage.setItem('odysseyProgress',JSON.stringify(p));
     function renderWorlds(){const learner=getLearner(),progress=getProgress(),unlocked=learner?Math.min(Object.keys(progress).filter(k=>progress[k]?.complete).length,worlds.length-1): -1;document.getElementById('worldGrid').innerHTML=worlds.map((w,i)=>{const available=i<=unlocked;const done=progress[i]?.complete;return `<article class="world ${available?'':'locked'}" onclick="openWorld(${i})"><span class="world-icon">${done?'✓':w[0]}</span><span class="number">WORLD ${String(i+1).padStart(2,'0')}</span><h3>${w[1]}</h3><p>${done?'Completed':available?'Ready to begin':'Complete the previous world to unlock'}</p></article>`}).join('');renderBadges()}
-    function certificateId(index){return `BCP-AJAY-L${String(index+1).padStart(2,'0')}`}
+    function certificateId(index){return `BCP-BRAHMASTRA-L${String(index+1).padStart(2,'0')}`}
     function renderBadges(){const box=document.getElementById('badgeGrid'),progress=getProgress();if(!box)return;const earned=worlds.map((w,i)=>({w,i})).filter(x=>progress[x.i]?.complete);box.innerHTML=earned.length?earned.map(({w,i})=>`<div class="badge"><span>${w[0]}</span><b>${safe(w[1])} Badge</b><button onclick="openCertificate(${i})">VIEW CERTIFICATE</button></div>`).join(''):'<div class="locked-msg">Complete a world to earn your first badge and certificate.</div>'}
-    function openCertificate(index){const learner=getLearner(),progress=getProgress(),w=worlds[index];if(!learner||!progress[index]?.complete)return;const id=certificateId(index),payload=encodeURIComponent(`BRAHMASTRA CODING PLATFORM | ${id} | ${w[1]} | SIGNED BY AJAY`),qr=`https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${payload}`;document.getElementById('certificateContent').innerHTML=`<div class="cert"><div class="cert-kicker">Brahmastra Coding Platform · Certificate of Completion</div><h2>Certificate of Achievement</h2><p>This certifies that</p><div class="recipient">${safe(learner.name)}</div><p>has completed <b>${safe(w[1])}</b> in the Java &amp; DSA learning journey.</p><p><small>Certificate ID: ${id} · QR code encodes the verification record</small></p><div class="cert-bottom"><div><small>Digitally signed by</small><div class="cert-sign">Ajay</div><small>Founder, Brahmastra Coding Platform</small></div><img class="cert-qr" src="${qr}" alt="QR verification code for ${id}"></div></div><div class="field" style="margin-top:18px"><label>Verify a certificate ID in this browser</label><input id="verifyId" value="${id}" /></div><button class="btn" style="margin-top:10px" onclick="verifyCertificate()">Verify certificate</button><div class="verify-result" id="verifyResult"></div>`;document.getElementById('certificateModal').classList.add('show')}
+    function openCertificate(index){const learner=getLearner(),progress=getProgress(),w=worlds[index];if(!learner||!progress[index]?.complete)return;const id=certificateId(index),payload=encodeURIComponent(`BRAHMASTRA CODING PLATFORM | ${id} | ${w[1]} | SIGNED BY BRAHMASTRA`),qr=`https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${payload}`;document.getElementById('certificateContent').innerHTML=`<div class="cert"><div class="cert-kicker">Brahmastra Coding Platform · Certificate of Completion</div><h2>Certificate of Achievement</h2><p>This certifies that</p><div class="recipient">${safe(learner.name)}</div><p>has completed <b>${safe(w[1])}</b> in the Java &amp; DSA learning journey.</p><p><small>Certificate ID: ${id} · QR code encodes the verification record</small></p><div class="cert-bottom"><div><small>Digitally signed by</small><div class="cert-sign">Brahmastra</div><small>Founder, Brahmastra Coding Platform</small></div><img class="cert-qr" src="${qr}" alt="QR verification code for ${id}"></div></div><div class="field" style="margin-top:18px"><label>Verify a certificate ID in this browser</label><input id="verifyId" value="${id}" /></div><button class="btn" style="margin-top:10px" onclick="verifyCertificate()">Verify certificate</button><div class="verify-result" id="verifyResult"></div>`;document.getElementById('certificateModal').classList.add('show')}
     function closeCertificate(){document.getElementById('certificateModal').classList.remove('show')}
-    function verifyCertificate(){const id=document.getElementById('verifyId').value.trim().toUpperCase(),match=/^BCP-AJAY-L(\d{2})$/.exec(id),learner=getLearner(),progress=getProgress(),result=document.getElementById('verifyResult');const n=match?Number(match[1])-1:-1;result.textContent=learner&&n>=0&&n<worlds.length&&progress[n]?.complete?`Verified: ${safe(learner.name)} completed ${worlds[n][1]}. Signed by Kapil.`:'Certificate record was not found in this browser.'}
+    function verifyCertificate(){const id=document.getElementById('verifyId').value.trim().toUpperCase(),match=/^BCP-BRAHMASTRA-L(\d{2})$/.exec(id),learner=getLearner(),progress=getProgress(),result=document.getElementById('verifyResult');const n=match?Number(match[1])-1:-1;result.textContent=learner&&n>=0&&n<worlds.length&&progress[n]?.complete?`Verified: ${safe(learner.name)} completed ${worlds[n][1]}. Signed by Kapil.`:'Certificate record was not found in this browser.'}
     function beginJourney(){const learner=getLearner();if(learner){document.querySelector('#journey').scrollIntoView({behavior:'smooth'});return}document.getElementById('learnerModal').classList.add('show');document.getElementById('learnerName').focus()}
     function closeLearner(){document.getElementById('learnerModal').classList.remove('show')}
     function saveLearner(){const name=document.getElementById('learnerName').value.trim();if(!name){document.getElementById('learnerError').textContent='Please enter your name.';return}localStorage.setItem('odysseyLearner',JSON.stringify({name:safe(name)}));closeLearner();renderWorlds();document.querySelector('#journey').scrollIntoView({behavior:'smooth'})}
@@ -318,7 +728,7 @@ background:#000;
     function checkCompletion(){const progress=getProgress(),p=progress[activeWorld]||{};if(p.mcqsComplete&&p.codingComplete){p.complete=true;progress[activeWorld]=p;saveProgress(progress);renderWorlds();const spot=document.getElementById('completionStatus');if(spot){spot.className='submission';spot.innerHTML=(activeWorld===worlds.length-1?'All worlds complete. Placement simulation unlocked.':'World complete. The next world is now unlocked.')+` <button class="btn secondary" style="margin-left:8px" onclick="openCertificate(${activeWorld})">View badge & certificate</button>`}}}
     function openAdmin(){document.getElementById('adminModal').classList.add('show');document.getElementById('adminId').focus()}
     function closeAdmin(){document.getElementById('adminModal').classList.remove('show')}
-    function signIn(){const id=document.getElementById('adminId').value.trim(),pass=document.getElementById('adminPassword').value;if(id==='AJAYADMIN'&&pass==='ADMIN123'){document.getElementById('loginBox').style.display='none';document.getElementById('adminPanel').style.display='block';document.getElementById('loginError').textContent=''}else document.getElementById('loginError').textContent='Invalid Admin ID or password.'}
+    function signIn(){const id=document.getElementById('adminId').value.trim(),pass=document.getElementById('adminPassword').value;if(id==='BRAHMASTRAADMIN'&&pass==='ADMIN123'){document.getElementById('loginBox').style.display='none';document.getElementById('adminPanel').style.display='block';document.getElementById('loginError').textContent=''}else document.getElementById('loginError').textContent='Invalid Admin ID or password.'}
     function signOut(){document.getElementById('adminPanel').style.display='none';document.getElementById('loginBox').style.display='block';document.getElementById('adminPassword').value='';document.getElementById('adminId').focus()}
     function createQuest(){const title=document.getElementById('questTitle').value.trim(),world=document.getElementById('questWorld').value,difficulty=document.getElementById('questDifficulty').value;if(!title){document.getElementById('questMessage').textContent='Please provide a quest title.';return}const quests=JSON.parse(localStorage.getItem('odysseyQuests')||'[]');quests.push({title:safe(title),world,difficulty});localStorage.setItem('odysseyQuests',JSON.stringify(quests));document.getElementById('questTitle').value='';renderQuests();document.getElementById('questMessage').textContent=`“${safe(title)}” was published.`}
     function renderQuests(){const quests=JSON.parse(localStorage.getItem('odysseyQuests')||'[]'),table=document.getElementById('questTable');table.innerHTML=quests.length?quests.map(q=>`<tr><td>${safe(q.title)}</td><td>${safe(q.world)}</td><td><span class="tag">${safe(q.difficulty)}</span></td></tr>`).join(''):'<tr><td colspan="3" style="color:var(--muted);text-align:center">No quests published yet.</td></tr>'}
